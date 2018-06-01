@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Tous les chemins mènent à la philosophie</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.radio-btn').click(function() {
+          $(".radio_block").each(isChecked)
+        })
+
+        function isChecked() {
+          var checked = $(this).find(".radio-btn").is(":checked")
+          $(this).toggleClass("hvr", checked)
+        }});
+    </script>
+  </head>
+  <body>
+    {% block body %}
+    <h1>Tous les chemins mènent à la Philosophie</h1>
+    <div class="explanations">
+      <p class="hello">{{ message }}</p>
+      {% for message in get_flashed_messages()%}
+        <p class="win">{{ message }}</p>
+      {% endfor %}
+      <p class="explain">
+        Tous les chemins mènent à la philosophie, la seule question
+        qu'on peut se poser c'est sur la longeur de ce chemin.<br/>
+        Dans ce jeu vous allez parcourir des articles du site Wikipedia
+        en partant d'un article que vous choisirez vous devez arriver à l'article
+        "Philosophie" en parcourant les liens que renvoient chaque article.
+        Votre mission si vous l'acceptez est d'arriver à l'article "Philosophie"
+        en passant par le moins de liens possibles.
+      </p>
+    </div>
+    <div class="start_game">
+      <form action="/new_game" method="post">
+        <input type="text" name="start" class="start_text">
+        <input type="submit" value="Go!" class="start_button">
+      </form>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{% extends "index.html" %}
+<body>
+  {% block body %}
+    <h1>Tous les chemins mènent à la Philosophie</h1>
+    <div class="container space-between">
+      <p class="first">Vous êtes sur la page
+        <span style="color: #12286b; font-size:30px; font-weight:bold;">
+          {{ current }}.</span> Sélectionnez la prochaine!
+        </p>
+      <p class="second">Score actuel:
+        <span style="color: #12286b; font-size:30px; font-weight:bold;">
+          {{ session.score }}
+        </span>
+        </p>
+    </div>
+
+
+      <form action="/move", method="post">
+        <div class="container5_radio space-between_radio">
+        <label>
+          <div class="radio_block">
+               <input type="radio" checked="checked" class="radio-btn" name="destination" value={{ session.links[0][0] }}>
+               <div class="radio_label">{{ session.links[0][1] }}</div>
+             </div>
+          </label>
+        {% for link in session.links[1:5] %}
+        <label>
+            <div class="radio_block">
+               <input type="radio" class="radio-btn" name="destination" value={{ link[0] }}>
+               <div class="radio_label">{{ link[1] }}</div>
+               </div>
+        </label>
+
+        {% endfor %}
+      </div>
+      <div class="container5_radio space-between_radio">
+        {% for link in session.links[5:] %}
+
+        <label>
+          <div class="radio_block">
+               <input type="radio" class="radio-btn" name="destination" value={{ link[0] }}>
+               <div class="radio_label">{{ link[1] }}</div>
+          </div>
+        </label>
+
+        {% endfor %}
+      </div>
+
+      {% if cheat > 1 %}
+        <input type="hidden" value="Je valide!">
+      {% else %}
+
+      <div class="continue_wrapper">
+        <input type="submit" value="Je valide!" class="continue" onclick="continue()">
+        <script>
+          function continue() {
+              document.getElementById("continue").style.backgroundColor = "#a0a0a0";
+          }
+        </script>
+      </div>
+      {% endif %}
+    </form>
+    <form action="/" method="get">
+      <div class="giveup_wrapper">
+        <input type="submit" value="Ok, j'abandonne" name="restart" class="giveup" onclick="giveup()"/>
+      </div>
+    </form>
+  {% endblock %}
+</body>

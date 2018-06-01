@@ -1,0 +1,203 @@
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  font-family: "Helvetica Neue", sans-serif;
+  text-shadow: 2px 2px #000000
+}
+
+body {
+  background: url("images/books.jpg") repeat 0 0 ;
+  background-size: cover;
+}
+
+/* Home page */
+.explanations {
+  margin: 50px 250px;
+  text-align: justify;
+}
+.hello {
+  text-align: center;
+  color: white;
+  font-size: 70px;
+  font-family: "Helvetica Neue";
+  text-shadow: 2px 2px #000000;
+}
+.explain {
+  color: white;
+  font-family: "Helvetica";
+  font-size: 18px;
+}
+.start_game {
+  text-align: center;
+}
+
+
+input[type=text] {
+    padding: 20px 32px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-size: 15px;
+}
+
+input[type=text]:focus {
+    border: 3px solid rgba(78, 167, 170, 0.65);
+}
+.start_button {
+  background-color: rgba(78, 167, 170, 0.65);
+  border: none;
+  color: white;
+  padding: 23px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.win {
+  text-align: center;
+  color: rgba(78, 167, 170, 0.65);
+  font-size: 70px;
+  font-family: "Helvetica Neue";
+}
+
+
+/* Current title and Score wrappers */
+.container {
+  background: rgba(255, 255, 255, 0.25);
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+.container.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.first, .second {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  color: white
+}
+
+
+.container5_radio {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+}
+.container5_radio.space-between_radio {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* Giveup Button */
+
+.giveup_wrapper {
+  text-align: center;
+}
+.giveup {
+    background-color: #960303; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.giveup {
+  width: 50%;}
+
+
+.giveup:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Continue button */
+
+.continue_wrapper {
+  text-align: center;
+}
+.continue {
+    background-color: #35cc76; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.continue {
+  width: 50%;}
+
+
+.continue:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Radio block */
+
+.radio_block {
+
+  background: rgba(78, 167, 170, 0.65); /* Grey */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  height: 200px;
+  width: 200px;
+}
+.radio_block:hover {
+
+  background: rgba(18, 40, 107, 0.90);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.radio_block.hvr {
+    background-color: rgba(18, 40, 107, 0.90);
+}
+
+input[type=radio] {
+    opacity: 0;
+    margin: auto;
+}
+label {
+    display: inline-block;
+    text-align: center;
+}
+.radio_label{
+  padding-top: 75px;
+  font-family: "Helvetica";
+  font-size: 20px;
+  color: white;
+}
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
